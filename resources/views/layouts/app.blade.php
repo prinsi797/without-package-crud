@@ -22,6 +22,17 @@
                             <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
 
                         </li>
+                        @if (Auth::user() && Auth::user()->role === 'admin')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('users.index') }}">Users</a>
+                            </li>
+                            <li class="nnav-item">
+                                <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
+                            </li>
+                        @endif
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
