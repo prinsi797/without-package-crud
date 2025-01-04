@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="mb-4">Add User</h1>
 
-    <form action="{{ route('users.store') }}" method="POST">
+    <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -23,6 +23,10 @@
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
             </select>
+        </div>
+        <div>
+            <label for="images">Upload Images:</label>
+            <input type="file" name="images[]" id="images" multiple>
         </div>
         <button type="submit" class="btn btn-success">Save</button>
         <a href="{{ route('users.index') }}" class="btn btn-secondary">Back</a>
