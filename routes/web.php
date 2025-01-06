@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LocationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,9 @@ Route::middleware(['auth'])->group(function () {
 
     // Posts Management
     Route::resource('posts', PostController::class);
+    Route::get('/location', [LocationController::class, 'index'])->name('location.index');
+    Route::get('/location/search', [LocationController::class, 'search'])->name('location.search'); // For AJAX
+
 });
 
 // Protected Route

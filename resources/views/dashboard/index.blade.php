@@ -22,11 +22,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.index') }}">Users</a>
                         </li>
-                        <li class="nnav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts.index') }}">Posts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('location.index')}}">Location</a>
                         </li>
                     @endif
 
